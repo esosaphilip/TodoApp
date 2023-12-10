@@ -48,16 +48,13 @@ fun TodoItem(
             )
             Column(modifier = Modifier.weight(1f)) {
                 Text(text = todo.todo, style = MaterialTheme.typography.displayMedium)
-                CompositionLocalProvider() {
+                CompositionLocalProvider {
                     Text(text = todo.time, style = MaterialTheme.typography.bodyMedium)
                 }
-//
             }
             IconButton(onClick = { onDelete(todo) }) {
                 Icon(imageVector = Icons.Default.Clear, contentDescription = null)
-//
             }
-//
         }
     }
 }

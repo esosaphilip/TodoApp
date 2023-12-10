@@ -55,9 +55,11 @@ class DetailViewModel(
     fun onTextChange(newText: String) {
         todoText.value = newText
     }
-    fun onTimeChange(newText: String) {
-        todoText.value = newText
+
+    fun onTimeChange(newTime: String) {
+        todoText.value = newTime
     }
+
     fun insert(todo: Todo) {
         viewModelScope.launch {
             repository.insertTodo(todo)

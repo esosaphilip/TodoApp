@@ -18,8 +18,8 @@ class TodoViewModel(private val repository: TodoRepository) : ViewModel() {
 
     init {
         viewModelScope.launch {
-            combine(todoList, selected) { todoList: List<Todo>, selected: Boolean ->
-                HomeViewState(todoList, selected)
+            combine(todoList, selected) { todos: List<Todo>, selected: Boolean ->
+                HomeViewState(todos, selected)
             }.collect {
                 _homeState.value = it
             }
